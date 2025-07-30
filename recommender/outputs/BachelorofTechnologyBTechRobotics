@@ -1,0 +1,241 @@
+// Bachelor of Technology (B.Tech) Robotics
+digraph {
+	graph [rankdir=TB ratio=compress size="20,30" splines=ortho]
+	node [fontname=Helvetica fontsize=12 height=0.8 width=1.5]
+	edge [fontsize=10]
+	d5d3db17 [label="Bachelor of Technology (B.Tech) Robotics" fillcolor=dodgerblue fontcolor=white fontsize=18 height=1.0 shape=doubleoctagon style=filled width=2.0]
+	b59f3bfe [label=title fillcolor=lightblue shape=box style="rounded,filled"]
+	d5d3db17 -> b59f3bfe
+	dcac6aad [label="Bachelor of Technology (B.Tech) Robotics" fillcolor=white shape=ellipse style="rounded,filled"]
+	b59f3bfe -> dcac6aad
+	"96ceab96" [label=years fillcolor=lightblue shape=box style="rounded,filled"]
+	d5d3db17 -> "96ceab96"
+	"7d67bd7b" [label=year fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> "7d67bd7b"
+	"3bcf46a2" [label=1 fillcolor=white shape=ellipse style="rounded,filled"]
+	"7d67bd7b" -> "3bcf46a2"
+	"69a48c57" [label=semester fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> "69a48c57"
+	"1938e3ba" [label=number fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "1938e3ba"
+	"68791bed" [label=1 fillcolor=white shape=ellipse style="rounded,filled"]
+	"1938e3ba" -> "68791bed"
+	a426c50b [label=courses fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> a426c50b
+	"045ca746" [label="• Introduction to Robotics" fillcolor=white shape=box style=filled]
+	a426c50b -> "045ca746"
+	"51313d64" [label="• Fundamentals of Programming" fillcolor=white shape=box style=filled]
+	a426c50b -> "51313d64"
+	c4ae43cf [label="• Linear Algebra" fillcolor=white shape=box style=filled]
+	a426c50b -> c4ae43cf
+	e68f7353 [label="• Calculus I" fillcolor=white shape=box style=filled]
+	a426c50b -> e68f7353
+	"15de3f0d" [label="• Physics I" fillcolor=white shape=box style=filled]
+	a426c50b -> "15de3f0d"
+	"8c692db3" [label="• Electronics I" fillcolor=white shape=box style=filled]
+	a426c50b -> "8c692db3"
+	"5c49b5ae" [label=projects fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "5c49b5ae"
+	"7d51f17b" [label="• Basic Arduino Projects" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "7d51f17b"
+	"826b62b9" [label="• Line Following Robot" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "826b62b9"
+	"1938e3ba" [label=number fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "1938e3ba"
+	"8c80f730" [label=2 fillcolor=white shape=ellipse style="rounded,filled"]
+	"1938e3ba" -> "8c80f730"
+	a426c50b [label=courses fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> a426c50b
+	"03cf58fe" [label="• Robotics Kinematics" fillcolor=white shape=box style=filled]
+	a426c50b -> "03cf58fe"
+	"928b24c2" [label="• Control Systems I" fillcolor=white shape=box style=filled]
+	a426c50b -> "928b24c2"
+	cfc6a218 [label="• Calculus II" fillcolor=white shape=box style=filled]
+	a426c50b -> cfc6a218
+	"187f37c7" [label="• Physics II" fillcolor=white shape=box style=filled]
+	a426c50b -> "187f37c7"
+	"5cd4e276" [label="• Electronics II" fillcolor=white shape=box style=filled]
+	a426c50b -> "5cd4e276"
+	d3e76a71 [label="• Digital Logic" fillcolor=white shape=box style=filled]
+	a426c50b -> d3e76a71
+	"5c49b5ae" [label=projects fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "5c49b5ae"
+	e3155291 [label="• PID Controller Implementation" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> e3155291
+	"2ea2a5fa" [label="• Simple Robotic Arm Control" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "2ea2a5fa"
+	dce8770f [label=focus fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> dce8770f
+	"835b4bd1" [label="Foundational knowledge in mathematics, programming, electronics, and basic robotics principles." fillcolor=white shape=ellipse style="rounded,filled"]
+	dce8770f -> "835b4bd1"
+	"7d67bd7b" [label=year fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> "7d67bd7b"
+	"121b7e04" [label=2 fillcolor=white shape=ellipse style="rounded,filled"]
+	"7d67bd7b" -> "121b7e04"
+	"69a48c57" [label=semester fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> "69a48c57"
+	"1938e3ba" [label=number fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "1938e3ba"
+	"70fb04bd" [label=3 fillcolor=white shape=ellipse style="rounded,filled"]
+	"1938e3ba" -> "70fb04bd"
+	a426c50b [label=courses fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> a426c50b
+	"997bd1e4" [label="• Robotics Dynamics" fillcolor=white shape=box style=filled]
+	a426c50b -> "997bd1e4"
+	bdce2644 [label="• Control Systems II" fillcolor=white shape=box style=filled]
+	a426c50b -> bdce2644
+	f1bd2a3e [label="• Probability and Statistics" fillcolor=white shape=box style=filled]
+	a426c50b -> f1bd2a3e
+	"899288e0" [label="• Data Structures and Algorithms" fillcolor=white shape=box style=filled]
+	a426c50b -> "899288e0"
+	"24c18609" [label="• Computer Architecture" fillcolor=white shape=box style=filled]
+	a426c50b -> "24c18609"
+	"22dfb6f1" [label="• Sensors and Actuators" fillcolor=white shape=box style=filled]
+	a426c50b -> "22dfb6f1"
+	"5c49b5ae" [label=projects fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "5c49b5ae"
+	"07f09a7c" [label="• Inverse Kinematics Solver" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "07f09a7c"
+	"6cc561b8" [label="• Obstacle Avoidance Robot" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "6cc561b8"
+	"1938e3ba" [label=number fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "1938e3ba"
+	afe48620 [label=4 fillcolor=white shape=ellipse style="rounded,filled"]
+	"1938e3ba" -> afe48620
+	a426c50b [label=courses fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> a426c50b
+	"25bab0d9" [label="• Computer Vision" fillcolor=white shape=box style=filled]
+	a426c50b -> "25bab0d9"
+	c53377b6 [label="• Machine Learning I" fillcolor=white shape=box style=filled]
+	a426c50b -> c53377b6
+	"8705949c" [label="• Signal Processing" fillcolor=white shape=box style=filled]
+	a426c50b -> "8705949c"
+	abedabba [label="• Embedded Systems" fillcolor=white shape=box style=filled]
+	a426c50b -> abedabba
+	"9b492f1f" [label="• Microcontroller Programming" fillcolor=white shape=box style=filled]
+	a426c50b -> "9b492f1f"
+	"606e3b07" [label="• Robotics Lab II" fillcolor=white shape=box style=filled]
+	a426c50b -> "606e3b07"
+	"5c49b5ae" [label=projects fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "5c49b5ae"
+	"14b85dd7" [label="• Object Recognition System" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "14b85dd7"
+	"50b4d041" [label="• Autonomous Navigation Robot" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "50b4d041"
+	dce8770f [label=focus fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> dce8770f
+	a8b0afd8 [label="Developing advanced skills in control systems, computer vision, machine learning, and embedded systems." fillcolor=white shape=ellipse style="rounded,filled"]
+	dce8770f -> a8b0afd8
+	"7d67bd7b" [label=year fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> "7d67bd7b"
+	"4f2a34a7" [label=3 fillcolor=white shape=ellipse style="rounded,filled"]
+	"7d67bd7b" -> "4f2a34a7"
+	"69a48c57" [label=semester fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> "69a48c57"
+	"1938e3ba" [label=number fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "1938e3ba"
+	"4c187226" [label=5 fillcolor=white shape=ellipse style="rounded,filled"]
+	"1938e3ba" -> "4c187226"
+	a426c50b [label=courses fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> a426c50b
+	"09c8b6d4" [label="• Artificial Intelligence" fillcolor=white shape=box style=filled]
+	a426c50b -> "09c8b6d4"
+	70627317 [label="• Machine Learning II" fillcolor=white shape=box style=filled]
+	a426c50b -> 70627317
+	"861754f8" [label="• Robotics Motion Planning" fillcolor=white shape=box style=filled]
+	a426c50b -> "861754f8"
+	afb3fd08 [label="• Real-Time Systems" fillcolor=white shape=box style=filled]
+	a426c50b -> afb3fd08
+	"3dd799a6" [label="• Path Planning Algorithms" fillcolor=white shape=box style=filled]
+	a426c50b -> "3dd799a6"
+	ae96ff91 [label="• Robotics Lab III" fillcolor=white shape=box style=filled]
+	a426c50b -> ae96ff91
+	"5c49b5ae" [label=projects fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "5c49b5ae"
+	b8ab0a4a [label="• SLAM Implementation" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> b8ab0a4a
+	d925d932 [label="• Multi-Robot Coordination" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> d925d932
+	"1938e3ba" [label=number fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "1938e3ba"
+	"283ca6ab" [label=6 fillcolor=white shape=ellipse style="rounded,filled"]
+	"1938e3ba" -> "283ca6ab"
+	a426c50b [label=courses fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> a426c50b
+	"658e86b1" [label="• Human-Robot Interaction" fillcolor=white shape=box style=filled]
+	a426c50b -> "658e86b1"
+	"7c2d30f6" [label="• Reinforcement Learning" fillcolor=white shape=box style=filled]
+	a426c50b -> "7c2d30f6"
+	"4862f9ac" [label="• Advanced Control Techniques" fillcolor=white shape=box style=filled]
+	a426c50b -> "4862f9ac"
+	"79c0b199" [label="• Parallel Computing" fillcolor=white shape=box style=filled]
+	a426c50b -> "79c0b199"
+	82976316 [label="• Robotics Capstone Project I" fillcolor=white shape=box style=filled]
+	a426c50b -> 82976316
+	"9e7c18f1" [label="• Elective I" fillcolor=white shape=box style=filled]
+	a426c50b -> "9e7c18f1"
+	"5c49b5ae" [label=projects fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "5c49b5ae"
+	fd64e125 [label="• Humanoid Robot Control" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> fd64e125
+	b6466f46 [label="• Collaborative Robotics Project" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> b6466f46
+	dce8770f [label=focus fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> dce8770f
+	b6fd4454 [label="Specializing in advanced robotics areas like AI, machine learning, motion planning, and human-robot interaction." fillcolor=white shape=ellipse style="rounded,filled"]
+	dce8770f -> b6fd4454
+	"7d67bd7b" [label=year fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> "7d67bd7b"
+	e624bf35 [label=4 fillcolor=white shape=ellipse style="rounded,filled"]
+	"7d67bd7b" -> e624bf35
+	"69a48c57" [label=semester fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> "69a48c57"
+	"1938e3ba" [label=number fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "1938e3ba"
+	c4fc430e [label=7 fillcolor=white shape=ellipse style="rounded,filled"]
+	"1938e3ba" -> c4fc430e
+	a426c50b [label=courses fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> a426c50b
+	bae056e1 [label="• Robotics Research Methods" fillcolor=white shape=box style=filled]
+	a426c50b -> bae056e1
+	"74a59909" [label="• Robotics Ethics and Safety" fillcolor=white shape=box style=filled]
+	a426c50b -> "74a59909"
+	"2b5d1e41" [label="• Elective II" fillcolor=white shape=box style=filled]
+	a426c50b -> "2b5d1e41"
+	"4e131ee9" [label="• Elective III" fillcolor=white shape=box style=filled]
+	a426c50b -> "4e131ee9"
+	40707293 [label="• Robotics Capstone Project II" fillcolor=white shape=box style=filled]
+	a426c50b -> 40707293
+	"9c45d4f1" [label="• Thesis Research" fillcolor=white shape=box style=filled]
+	a426c50b -> "9c45d4f1"
+	"5c49b5ae" [label=projects fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "5c49b5ae"
+	"0beafcfe" [label="• Research Paper Publication" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "0beafcfe"
+	"3e8cc257" [label="• Robotics Competition" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "3e8cc257"
+	"1938e3ba" [label=number fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "1938e3ba"
+	"2c24b5aa" [label=8 fillcolor=white shape=ellipse style="rounded,filled"]
+	"1938e3ba" -> "2c24b5aa"
+	a426c50b [label=courses fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> a426c50b
+	"487109d4" [label="• Thesis Defense" fillcolor=white shape=box style=filled]
+	a426c50b -> "487109d4"
+	"3b99c0d3" [label="• Career Development" fillcolor=white shape=box style=filled]
+	a426c50b -> "3b99c0d3"
+	"08e2e366" [label="• Internship" fillcolor=white shape=box style=filled]
+	a426c50b -> "08e2e366"
+	f66c918a [label="• Industry Seminar" fillcolor=white shape=box style=filled]
+	a426c50b -> f66c918a
+	"5c49b5ae" [label=projects fillcolor=peachpuff shape=box style="rounded,filled"]
+	"69a48c57" -> "5c49b5ae"
+	"2406d4af" [label="• Complete Thesis" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "2406d4af"
+	"2189b0f8" [label="• Job Search" fillcolor=white shape=box style=filled]
+	"5c49b5ae" -> "2189b0f8"
+	dce8770f [label=focus fillcolor=lightyellow shape=box style="rounded,filled"]
+	"96ceab96" -> dce8770f
+	"05e87820" [label="Culminating the program with a significant research project, preparing for industry and/or graduate studies." fillcolor=white shape=ellipse style="rounded,filled"]
+	dce8770f -> "05e87820"
+}

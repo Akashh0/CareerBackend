@@ -1,0 +1,335 @@
+{
+  "roadmap": {
+    "title": "Bachelor of Science in Computer Science",
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "courses": [
+              "Introduction to Programming",
+              "Calculus I",
+              "Linear Algebra",
+              "Digital Logic Design"
+            ],
+            "skills": {
+              "technical": [
+                "Basic programming concepts",
+                "Problem-solving using code",
+                "Basic logic and circuit design"
+              ],
+              "soft": [
+                "Time management",
+                "Collaboration",
+                "Communication"
+              ]
+            },
+            "online_courses": [
+              {
+                "platform": "Coursera",
+                "course": "Programming for Everybody (Getting Started with Python)",
+                "type": "free"
+              },
+              {
+                "platform": "Khan Academy",
+                "course": "Linear Algebra",
+                "type": "free"
+              }
+            ],
+            "milestones": [
+              "Complete first programming assignment",
+              "Understand basic data structures"
+            ],
+            "projects": {
+              "mini": "Simple calculator application",
+              "major": "Text-based adventure game"
+            },
+            "portfolio": {
+              "github": "Create GitHub account and upload first project"
+            }
+          },
+          {
+            "semester": 2,
+            "courses": [
+              "Data Structures and Algorithms",
+              "Calculus II",
+              "Discrete Mathematics",
+              "Computer Organization and Architecture"
+            ],
+            "skills": {
+              "technical": [
+                "Implementation of data structures",
+                "Algorithm analysis",
+                "Assembly language programming"
+              ],
+              "soft": [
+                "Presentation skills",
+                "Critical thinking"
+              ]
+            },
+            "online_courses": [
+              {
+                "platform": "Udemy",
+                "course": "Master the Coding Interview: Data Structures + Algorithms",
+                "type": "paid"
+              },
+              {
+                "platform": "edX",
+                "course": "Introduction to Computer Science and Programming Using Python",
+                "type": "free"
+              }
+            ],
+            "milestones": [
+              "Implement common data structures",
+              "Analyze algorithm complexity"
+            ],
+            "projects": {
+              "mini": "Sorting algorithm visualization",
+              "major": "Basic compiler for a simple language"
+            },
+            "portfolio": {
+              "github": "Contribute to open-source projects"
+            }
+          }
+        ]
+      },
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 3,
+            "courses": [
+              "Object-Oriented Programming",
+              "Probability and Statistics",
+              "Database Management Systems",
+              "Operating Systems"
+            ],
+            "skills": {
+              "technical": [
+                "OOP principles",
+                "SQL queries",
+                "Process management"
+              ],
+              "soft": [
+                "Teamwork",
+                "Conflict resolution"
+              ]
+            },
+            "online_courses": [
+              {
+                "platform": "Udacity",
+                "course": "Object-Oriented JavaScript",
+                "type": "paid"
+              }
+            ],
+            "milestones": [
+              "Develop a simple OOP application",
+              "Design a database schema"
+            ],
+            "projects": {
+              "mini": "Library management system",
+              "major": "Simple operating system kernel"
+            },
+            "portfolio": {
+              "github": "Create a personal website"
+            }
+          },
+          {
+            "semester": 4,
+            "courses": [
+              "Software Engineering",
+              "Theory of Computation",
+              "Computer Networks",
+              "Web Development"
+            ],
+            "skills": {
+              "technical": [
+                "Software development lifecycle",
+                "Network protocols",
+                "Front-end and back-end development"
+              ],
+              "soft": [
+                "Leadership",
+                "Adaptability"
+              ]
+            },
+            "online_courses": [
+              {
+                "platform": "FreeCodeCamp",
+                "course": "Responsive Web Design",
+                "type": "free"
+              }
+            ],
+            "milestones": [
+              "Participate in a hackathon",
+              "Develop a full-stack web application"
+            ],
+            "projects": {
+              "mini": "E-commerce website",
+              "major": "Network simulator"
+            },
+            "portfolio": {
+              "github": "Write blog posts about projects"
+            }
+          }
+        ]
+      },
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 5,
+            "courses": [
+              "Artificial Intelligence",
+              "Computer Graphics",
+              "Compiler Design",
+              "Elective 1"
+            ],
+            "skills": {
+              "technical": [
+                "Machine learning algorithms",
+                "3D graphics rendering",
+                "Compiler construction"
+              ],
+              "soft": [
+                "Problem-solving",
+                "Decision making"
+              ]
+            },
+            "online_courses": [
+              {
+                "platform": "Coursera",
+                "course": "Machine Learning",
+                "type": "paid"
+              }
+            ],
+            "milestones": [
+              "Implement a machine learning algorithm",
+              "Develop a simple game with graphics"
+            ],
+            "projects": {
+              "mini": "Image recognition application",
+              "major": "Simple compiler for a custom language"
+            },
+            "internship": {
+              "strategy": "Start applying for internships",
+              "resume": "Tailor resume to target companies",
+              "linkedin": "Optimize LinkedIn profile"
+            }
+          },
+          {
+            "semester": 6,
+            "courses": [
+              "Machine Learning",
+              "Data Mining",
+              "Software Security",
+              "Elective 2"
+            ],
+            "skills": {
+              "technical": [
+                "Advanced machine learning techniques",
+                "Data analysis and visualization",
+                "Security best practices"
+              ],
+              "soft": [
+                "Negotiation skills",
+                "Emotional intelligence"
+              ]
+            },
+            "online_courses": [
+              {
+                "platform": "DataCamp",
+                "course": "Data Scientist with Python",
+                "type": "paid"
+              }
+            ],
+            "milestones": [
+              "Complete a data mining project",
+              "Implement security measures in a web application"
+            ],
+            "projects": {
+              "mini": "Sentiment analysis tool",
+              "major": "Secure web application"
+            },
+            "internship": {
+              "interview_prep": "Practice coding challenges and behavioral questions"
+            }
+          }
+        ]
+      },
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 7,
+            "courses": [
+              "Big Data Analytics",
+              "Cloud Computing",
+              "Mobile Application Development",
+              "Elective 3"
+            ],
+            "skills": {
+              "technical": [
+                "Big data processing frameworks",
+                "Cloud deployment",
+                "Mobile app development"
+              ],
+              "soft": [
+                "Public speaking",
+                "Networking"
+              ]
+            },
+            "milestones": [
+              "Deploy an application to the cloud",
+              "Develop a mobile application"
+            ],
+            "projects": {
+              "mini": "Data visualization dashboard",
+              "major": "Cloud-based application"
+            },
+            "placement": {
+              "roles": [
+                "Software Engineer",
+                "Data Scientist",
+                "Web Developer"
+              ],
+              "companies": [
+                "Google",
+                "Microsoft",
+                "Amazon"
+              ],
+              "mock_interviews": "Practice mock interviews with peers and mentors"
+            }
+          },
+          {
+            "semester": 8,
+            "courses": [
+              "Project/Thesis",
+              "Elective 4"
+            ],
+            "skills": {
+              "technical": [
+                "Independent research",
+                "Project management"
+              ],
+              "soft": [
+                "Time management",
+                "Self-motivation"
+              ]
+            },
+            "milestones": [
+              "Complete final year project/thesis"
+            ],
+            "projects": {
+              "major": "Capstone project"
+            },
+            "placement": {
+              "final_preparation": "Finalize resume and portfolio, prepare for final interviews"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
