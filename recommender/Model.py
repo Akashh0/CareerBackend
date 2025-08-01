@@ -72,84 +72,47 @@ def call_llama_api(prompt):
         print(f"\n❌ LLaMA API Error: {e}")
         return None
 
-# === Load CSV and Sentence-BERT ===
-df = pd.read_csv("final_course_data_for_bert.csv")
-df['course_summary'] = "Course: " + df['Course'] + " | Field: " + df['Field']
-model = SentenceTransformer('all-MiniLM-L6-v2')
+# === Main callable for backend ===
+def generate_recommendation_from_input(user_interest, user_qualification):
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(BASE_DIR, "final_course_data_for_bert.csv")
+    df = pd.read_csv(csv_path)
+    df['course_summary'] = "Course: " + df['Course'] + " | Field: " + df['Field']
+    model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# === Get User Input ===
-user_interest = input("🎤 Enter your interests: ")
-user_qualification = input("🎓 Enter your current qualification: ").strip().lower()
+    df_filtered = df[df['Minimum_Qualification'].str.lower() == user_qualification.lower()]
+    if df_filtered.empty:
+        raise ValueError("No courses found for your qualification.")
 
-df_filtered = df[df['Minimum_Qualification'].str.lower() == user_qualification]
-if df_filtered.empty:
-    print("\n⚠ No courses found for your qualification.")
-    exit()
+    course_texts = df_filtered['course_summary'].tolist()
+    course_embeddings = model.encode(course_texts, show_progress_bar=False)
+    user_embedding = model.encode([user_interest])
+    similarities = cosine_similarity(user_embedding, course_embeddings)[0]
+    best_index = similarities.argmax()
+    best_row = df_filtered.iloc[best_index]
+    best_course = best_row['Course']
 
-# === Semantic Search ===
-course_texts = df_filtered['course_summary'].tolist()
-course_embeddings = model.encode(course_texts, show_progress_bar=True)
-user_embedding = model.encode([user_interest])
-similarities = cosine_similarity(user_embedding, course_embeddings)[0]
-best_index = similarities.argmax()
-best_row = df_filtered.iloc[best_index]
-best_course = best_row['Course']
+    course_prefix = best_course.split()[0].upper()
+    prompt_related = (
+        f"Suggest 4 other full {course_prefix} engineering degree courses that are closely related to '{best_course}'. "
+        "Return only a numbered list without explanation. Format strictly as raw JSON array."
+    )
+    related_response = call_llama_api(prompt_related)
 
-print(f"\n🎯 Recommended Course: {best_course}")
+    try:
+        related_courses = json.loads(related_response)
+    except:
+        related_courses = []
+        for line in related_response.strip().split('\n'):
+            match = re.match(r'^\d+\. (.+)', line.strip())
+            if match:
+                related_courses.append(match.group(1).strip())
 
-# === Related Courses ===
-course_prefix = best_course.split()[0].upper()
-prompt_related = (
-    f"Suggest 4 other full {course_prefix} engineering degree courses that are closely related to '{best_course}'. "
-    "Return only a numbered list without explanation. Format strictly as raw JSON array."
-)
-related_courses_response = call_llama_api(prompt_related)
+    all_courses = [best_course] + related_courses
+    selected_course = best_course  # Auto-select top match for roadmap
 
-if not related_courses_response:
-    print("\n⚠ Failed to get related course suggestions.")
-    exit()
-
-try:
-    # Try strict JSON loading
-    related_courses = json.loads(related_courses_response)
-    if not isinstance(related_courses, list):
-        raise ValueError("LLaMA did not return a list.")
-except Exception:
-    # Fallback: clean numbered text format like:
-    # "1. Course A\n2. Course B\n3. ..."
-    related_courses = []
-    for line in related_courses_response.strip().split('\n'):
-        match = re.match(r'^\d+\. (.+)', line.strip())
-        if match:
-            related_courses.append(match.group(1).strip())
-
-    if not related_courses:
-        raise ValueError("LLaMA returned unparseable course suggestions.")
-
-except Exception as e:
-    print(f"\n❌ Error parsing related courses from LLaMA: {e}")
-    exit()
-
-print("\n📚 Related Courses:")
-print(f"1. {best_course}  (model-recommended)")
-for idx, course in enumerate(related_courses, start=2):
-    print(f"{idx}. {course}")
-
-all_courses = [best_course] + related_courses
-
-# === User Selection ===
-try:
-    selected = int(input("\n👉 Enter a number (1–5) to choose a course for your academic roadmap: "))
-    if selected < 1 or selected > len(all_courses):
-        raise ValueError
-except ValueError:
-    print("⚠ Invalid selection.")
-    exit()
-
-selected_course = all_courses[selected - 1]
-
-# === Roadmap Prompt ===
-prompt_roadmap = f"""
+    # === Roadmap prompt ===
+    prompt_roadmap = f"""
 You are an expert mentor and a caring parent helping your child succeed in the course '{selected_course}'.
 
 Create a deeply structured, spoon-feeding style 4-year roadmap from scratch to expert level.
@@ -166,49 +129,34 @@ Include:
 9. Internship search strategy, resume and LinkedIn optimization, interview prep
 10. Final-year job placement guide (roles to target, top companies, mock interviews)
 
-Format everything as a JSON with the root key \"roadmap\" and include the \"title\" as the course name. Each item should be labeled clearly.
+Format everything as a JSON with the root key "roadmap" and include the "title" as the course name. Each item should be labeled clearly.
 Use descriptive labels for nodes. Use structured nesting.
 Do NOT explain anything outside JSON.
 Output only valid JSON.
 """
+    roadmap_json = call_llama_api(prompt_roadmap)
+    if not roadmap_json:
+        raise ValueError("Failed to generate roadmap.")
 
-roadmap_json = call_llama_api(prompt_roadmap)
-if not roadmap_json:
-    print("\n⚠ Failed to generate academic roadmap.")
-    exit()
-
-try:
     try:
         json_data = json.loads(roadmap_json)
     except json.JSONDecodeError:
-        print("\n⚠ LLaMA returned invalid JSON. Trying to clean it...")
         match = re.search(r'\{[\s\S]*\}', roadmap_json)
         if match:
             cleaned_json = match.group(0)
             json_data = json.loads(cleaned_json)
         else:
-            raise ValueError("No valid JSON block found.")
+            raise ValueError("Invalid roadmap JSON.")
 
-    with open("flowchart.json", "w") as f:
-        json.dump(json_data, f, indent=2)
+    return {
+        "recommended_course": best_course,
+        "related_courses": all_courses,
+        "roadmap": json_data.get("roadmap", {})
+    }
 
-    print("\n✅ JSON roadmap saved to flowchart.json")
-
-    # Render flowchart to PDF
-    title = json_data.get("roadmap", {}).get("title", "Career_Roadmap")
-    dot = Digraph(comment=title,
-                  graph_attr={'rankdir': 'TB', 'splines': 'ortho', 'size': '20,30', 'ratio': 'compress'},
-                  node_attr={'fontname': 'Helvetica', 'fontsize': '12', 'width': '1.5', 'height': '0.8'},
-                  edge_attr={'fontsize': '10'})
-
-    title_id = hash_id('title')
-    dot.node(title_id, title, shape='doubleoctagon', style='filled', fillcolor='dodgerblue',
-             fontcolor='white', fontsize='18', width='2.0', height='1.0')
-
-    build_flowchart(dot, json_data, title_id)
-    dot.render("courses", format="pdf", cleanup=True)
-
-    print("✅ PDF flowchart generated: courses.pdf")
-
-except Exception as e:
-    print(f"\n❌ Error processing roadmap: {e}")
+# === CLI Testing ===
+if __name__ == "__main__":
+    interest = input("🎤 Enter your interests: ")
+    qualification = input("🎓 Enter your current qualification: ").strip().lower()
+    result = generate_recommendation_from_input(interest, qualification)
+    print(json.dumps(result, indent=2))
